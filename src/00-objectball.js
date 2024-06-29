@@ -229,5 +229,28 @@ function bigShoeRebounds(){
         return biggestShoePlayer.rebounds;
     }
 }
-console.log(bigShoeRebounds())
+debugger;
+
+function mostPointsScored(){
+    const gameData=gameObject();
+    let mostPointsPlayer=null;
+    let maxPoints=0;
+    Object.values(gameData.home.players).forEach(player => {
+        if(player.points > maxPoints){
+            maxPoints=player.points;
+            mostPointsPlayer=player;
+        }
+    })
+
+    Object.values(gameData.away.players).forEach(player => {
+        if(player.points > maxPoints){
+            maxPoints=player.points;
+            mostPointsPlayer=player;
+        }
+    })
+
+    if(mostPointsPlayer){
+        return mostPointsPlayer;
+    }
+}
 debugger;
